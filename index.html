@@ -1,17 +1,407 @@
-<div class="product-card">
-          <h3>🎵 TikTok Account #1</h3>
-          <p>ئەکاونتی TikTok ـی بەردەست</p>
-          <div class="price">$10</div>
-          <button class="buy" onclick="buy('TikTok Account #1')">
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SarHaD Store</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #0f1115;
+      color: #ffffff;
+    }
+
+    header {
+      background: #171a21;
+      padding: 18px;
+      text-align: center;
+      border-bottom: 1px solid #292d36;
+    }
+
+    header h1 {
+      font-size: 30px;
+      margin-bottom: 8px;
+    }
+
+    header p {
+      color: #aaa;
+      font-size: 16px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 15px;
+      flex-wrap: wrap;
+    }
+
+    nav button {
+      width: auto;
+      padding: 10px 16px;
+      background: #252a34;
+      color: #fff;
+      border: 1px solid #363c48;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .banner {
+      width: 100%;
+      display: block;
+      max-height: 380px;
+      object-fit: cover;
+      border-radius: 18px;
+      margin-bottom: 25px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 30px 15px;
+    }
+
+    .hero h2 {
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      color: #aaa;
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 28px;
+      margin: 25px 0;
+    }
+
+    .search {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 20px;
+      background: #181b22;
+      color: #fff;
+      border: 1px solid #292d36;
+      border-radius: 12px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .games-grid,
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .game-card,
+    .product-card,
+    .info-box {
+      background: #181b22;
+      border: 1px solid #292d36;
+      border-radius: 18px;
+      padding: 24px;
+    }
+
+    .game-card {
+      text-align: center;
+    }
+
+    .game-icon {
+      font-size: 55px;
+      margin-bottom: 15px;
+    }
+
+    .game-card h3 {
+      font-size: 21px;
+      margin-bottom: 10px;
+    }
+
+    .game-card p,
+    .product-card p {
+      color: #aaa;
+      line-height: 1.7;
+      margin-bottom: 18px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      background: #ffffff;
+      color: #111111;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #dddddd;
+    }
+
+    .products-section {
+      display: none;
+      margin-top: 30px;
+    }
+
+    .products-section.active {
+      display: block;
+    }
+
+    .product-card h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-size: 23px;
+      font-weight: bold;
+      margin: 15px 0;
+    }
+
+    .back-button {
+      background: #252a34;
+      color: #ffffff;
+      margin-bottom: 20px;
+    }
+
+    .info-box {
+      text-align: center;
+      line-height: 2;
+    }
+
+    footer {
+      text-align: center;
+      color: #777;
+      padding: 35px 20px;
+      margin-top: 50px;
+      border-top: 1px solid #20242c;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 25px;
+      }
+
+      .hero h2 {
+        font-size: 25px;
+      }
+
+      .section-title {
+        font-size: 24px;
+      }
+
+      .container {
+        padding: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header id="top">
+    <h1>🛒 SarHaD Store</h1>
+    <p>فروشگای دیجیتاڵ</p>
+
+    <nav>
+      <button onclick="goHome()">🏠 سەرەتا</button>
+      <button onclick="showInfo('about')">ℹ️ دەربارەمان</button>
+      <button onclick="showInfo('contact')">📞 پەیوەندی</button>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <!-- وێنەی سەرەوە -->
+    <img
+      src="banner.jpg"
+      alt="SarHaD Store"
+      class="banner"
+    >
+    <section id="homeSection">
+
+      <section class="hero">
+        <h2>بەخێربێیت بۆ SarHaD Store</h2>
+        <p>
+          بەرهەم و خزمەتگوزارییە دیجیتاڵەکانت لێرە بەردەستن
+        </p>
+      </section>
+
+      <h2 class="section-title">🎮 یاری و ئەکاونتەکان</h2>
+
+      <input
+        id="searchBox"
+        class="search"
+        type="text"
+        placeholder="گەڕان بۆ یاری یان ئەکاونت..."
+        oninput="searchGames()"
+      >
+
+      <div class="games-grid">
+
+        <!-- 8 Ball Pool -->
+        <div class="game-card" data-name="8 Ball Pool">
+          <div class="game-icon">🎱</div>
+          <h3>8 Ball Pool</h3>
+          <p>کلیلی یاری و خزمەتگوزارییەکان</p>
+          <button onclick="openProducts('pool')">
+            بینینی بەرهەمەکان
+          </button>
+        </div>
+
+        <!-- PUBG Mobile -->
+        <div class="game-card" data-name="PUBG Mobile">
+          <div class="game-icon">🔫</div>
+          <h3>PUBG Mobile</h3>
+          <p>UC و خزمەتگوزارییەکان</p>
+          <button onclick="openProducts('pubg')">
+            بینینی بەرهەمەکان
+          </button>
+        </div>
+
+        <!-- TikTok -->
+        <div class="game-card" data-name="TikTok Accounts">
+          <div class="game-icon">🎵</div>
+          <h3>TikTok Accounts</h3>
+          <p>ئەکاونتی TikTok بۆ فرۆشتن</p>
+          <button onclick="openProducts('tiktok')">
+            بینینی ئەکاونتەکان
+          </button>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- 8 BALL POOL -->
+    <section id="pool" class="products-section">
+
+      <button class="back-button" onclick="goHome()">
+        ← گەڕانەوە
+      </button>
+
+      <h2 class="section-title">🎱 8 Ball Pool</h2>
+
+      <div class="products-grid">
+
+        <div class="product-card">
+          <h3>🎮 Game Key</h3>
+          <p>کلیلی یاری</p>
+          <div class="price">$5</div>
+          <button onclick="buyProduct('8 Ball Pool - Game Key')">
             🛒 کڕین
           </button>
         </div>
 
         <div class="product-card">
+          <h3>🔑 Premium Key</h3>
+          <p>کلیلی Premium</p>
+          <div class="price">$10</div>
+          <button onclick="buyProduct('8 Ball Pool - Premium Key')">
+            🛒 کڕین
+          </button>
+        </div>
+
+        <div class="product-card">
+          <h3>⚡ VIP Service</h3>
+          <p>خزمەتگوزاری VIP</p>
+          <div class="price">$15</div>
+          <button onclick="buyProduct('8 Ball Pool - VIP Service')">
+            🛒 کڕین
+          </button>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- PUBG -->
+    <section id="pubg" class="products-section">
+
+      <button class="back-button" onclick="goHome()">
+        ← گەڕانەوە
+      </button>
+
+      <h2 class="section-title">🔫 PUBG Mobile</h2>
+
+      <div class="products-grid">
+
+        <div class="product-card">
+          <h3>💰 UC Package</h3>
+          <p>پەکەجی UC</p>
+          <div class="price">$5</div>
+          <button onclick="buyProduct('PUBG Mobile - UC Package')">
+            🛒 کڕین
+          </button>
+        </div>
+
+        <div class="product-card">
+          <h3>⭐ Premium</h3>
+          <p>خزمەتگوزاری Premium</p>
+          <div class="price">$10</div>
+          <button onclick="buyProduct('PUBG Mobile - Premium')">
+            🛒 کڕین
+          </button>
+        </div>
+
+        <div class="product-card">
+          <h3>⚡ VIP Service</h3>
+          <p>خزمەتگوزاری VIP</p>
+          <div class="price">$15</div>
+          <button onclick="buyProduct('PUBG Mobile - VIP Service')">
+            🛒 کڕین
+          </button>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- TIKTOK -->
+    <section id="tiktok" class="products-section">
+
+      <button class="back-button" onclick="goHome()">
+        ← گەڕانەوە
+      </button>
+
+      <h2 class="section-title">🎵 TikTok Accounts</h2>
+
+      <div class="products-grid">
+
+        <div class="product-card">
+          <h3>🎵 TikTok Account #1</h3>
+          <p>ئەکاونتی TikTok ـی بەردەست</p>
+          <div class="price">$10</div>
+          <button onclick="buyProduct('TikTok Account #1')">
+            🛒 کڕین
+          </button>
+          </div>
+
+        <div class="product-card">
           <h3>🎵 TikTok Account #2</h3>
           <p>ئەکاونتی TikTok ـی بەردەست</p>
           <div class="price">$20</div>
-          <button class="buy" onclick="buy('TikTok Account #2')">
+          <button onclick="buyProduct('TikTok Account #2')">
             🛒 کڕین
           </button>
         </div>
@@ -20,7 +410,7 @@
           <h3>🎵 TikTok Account #3</h3>
           <p>ئەکاونتی TikTok ـی بەردەست</p>
           <div class="price">$30</div>
-          <button class="buy" onclick="buy('TikTok Account #3')">
+          <button onclick="buyProduct('TikTok Account #3')">
             🛒 کڕین
           </button>
         </div>
@@ -30,59 +420,40 @@
     </section>
 
     <!-- ABOUT -->
-
     <section id="about" class="products-section">
 
-      <button class="back" onclick="goHome()">
+      <button class="back-button" onclick="goHome()">
         ← گەڕانەوە
       </button>
 
       <h2 class="section-title">ℹ️ دەربارەی SarHaD Store</h2>
 
-      <div class="about-box">
+      <div class="info-box">
         <p>
           بەخێربێن بۆ SarHaD Store.
         </p>
 
         <p>
-          ئێمە خزمەتگوزاری و بەرهەمە دیجیتاڵەکان پێشکەش دەکەین.
-        </p>
-
-        <p>
-          ئامانجمان ئەوەیە خزمەتگوزارییەکان بە شێوەیەکی خێرا و ئاسان پێشکەش بکەین.
+          ئێمە بەرهەم و خزمەتگوزارییە دیجیتاڵەکان پێشکەش دەکەین.
         </p>
       </div>
 
     </section>
 
     <!-- CONTACT -->
-
     <section id="contact" class="products-section">
 
-      <button class="back" onclick="goHome()">
+      <button class="back-button" onclick="goHome()">
         ← گەڕانەوە
       </button>
 
       <h2 class="section-title">📞 پەیوەندی</h2>
 
-      <div class="contact-box">
-
-        <p>
-          بۆ کڕین یان پرسیار، پەیوەندیمان پێوە بکە.
-        </p>
-
-        <p>
-          📱 WhatsApp: زیاد بکە
-        </p>
-
-        <p>
-          📱 Telegram: زیاد بکە
-        </p>
-
-        <p>
-          🎵 TikTok: زیاد بکە
-        </p>
-
+      <div class="info-box">
+        <p>بۆ کڕین و پرسیار پەیوەندیمان پێوە بکە.</p>
+        <p>📱 WhatsApp: لێرە ژمارەکەت زیاد دەکەین</p>
+        <p>📱 Telegram: لێرە لینکی Telegram ـت زیاد دەکەین</p>
+        <p>🎵 TikTok: لێرە لینکی TikTok ـت زیاد دەکەین</p>
       </div>
 
     </section>
@@ -95,94 +466,86 @@
 
   <script>
 
-    function hideAllSections() {
-      const sections = document.querySelectorAll('.products-section');
+    function hideAllProducts() {
+      const sections = document.querySelectorAll(".products-section");
 
       sections.forEach(function(section) {
-        section.classList.remove('active');
+        section.classList.remove("active");
       });
-
-      document.getElementById('store').style.display = 'block';
-    }
-
-    function showProducts(id) {
-
-      hideAllSections();
-
-      document.getElementById('store').style.display = 'none';
-
-      const selected = document.getElementById(id);
-
-      if (selected) {
-        selected.classList.add('active');
-
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        });
-      }
-    }
-
-    function showSection(id) {
-
-      hideAllSections();
-
-      document.getElementById('store').style.display = 'none';
-
-      const selected = document.getElementById(id);
-
-      if (selected) {
-        selected.classList.add('active');
-
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        });
-      }
     }
 
     function goHome() {
+      hideAllProducts();
 
-      hideAllSections();
-
-      document.getElementById('store').style.display = 'block';
+      document.getElementById("homeSection").style.display = "block";
 
       window.scrollTo({
         top: 0,
-        behavior: 'smooth'
+        behavior: "smooth"
       });
+    }
+
+    function openProducts(id) {
+      document.getElementById("homeSection").style.display = "none";
+
+      hideAllProducts();
+
+      const section = document.getElementById(id);
+
+      if (section) {
+        section.classList.add("active");
+
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+      }
+    }
+
+    function showInfo(id) {
+      document.getElementById("homeSection").style.display = "none";
+
+      hideAllProducts();
+
+      const section = document.getElementById(id);
+
+      if (section) {
+        section.classList.add("active");
+
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+      }
     }
 
     function searchGames() {
+      const text = document
+        .getElementById("searchBox")
+        .value
+        .toLowerCase();
 
-      const searchText =
-        document.getElementById('search').value.toLowerCase();
+      const cards = document.querySelectorAll(".game-card");
 
-      const games =
-        document.querySelectorAll('.game-card');
+      cards.forEach(function(card) {
+        const name = card
+          .getAttribute("data-name")
+          .toLowerCase();
 
-      games.forEach(function(game) {
-
-        const name =
-          game.getAttribute('data-name').toLowerCase();
-
-        if (name.includes(searchText)) {
-          game.style.display = 'block';
+        if (name.includes(text)) {
+          card.style.display = "block";
         } else {
-          game.style.display = 'none';
+          card.style.display = "none";
         }
-
       });
     }
 
-    function buy(productName) {
-
+    function buyProduct(productName) {
       alert(
-        'بۆ کڕینی ' +
+        "بۆ کڕینی " +
         productName +
-        ' تکایە پەیوەندی بە SarHaD Store بکە.'
+        " تکایە پەیوەندی بە SarHaD Store بکە."
       );
-
     }
 
   </script>
