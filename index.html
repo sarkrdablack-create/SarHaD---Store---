@@ -59,12 +59,7 @@ nav button:nth-last-child(2) {
   width: auto !important;
   padding: 4px 7px !important;
   font-size: 10px !important;
-}
-    .container {
-      width: 100%;
-      max-width: 1100px;
-      margin: auto;
-      padding: 20px;
+  
     }
 
     .banner {
@@ -226,6 +221,14 @@ nav button:nth-last-child(2) {
         padding: 14px;
       }
     }
+    nav .login-btn,
+nav .signup-btn {
+  width: auto !important;
+  padding: 6px 10px !important;
+  font-size: 12px !important;
+  margin: 0;
+}
+    
   </style>
 </head>
 
@@ -236,10 +239,7 @@ nav button:nth-last-child(2) {
     <p>فروشگای دیجیتاڵ</p>
 
     <nav>
-      <button onclick="goHome()">🏠 سەرەتا</button>
-      <button onclick="showInfo('about')">ℹ️ دەربارەمان</button>
-      <button onclick="showInfo('contact')">📞 پەیوەندی</button>
-    </nav>
+  
     <button onclick="showInfo('login')">🔐 Log In</button>
 <button onclick="showInfo('signup')">📝 Sign Up</button>
   </header>
