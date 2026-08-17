@@ -129,12 +129,14 @@
       font-size: 55px;
       margin-bottom: 15px;
     }
-.game-icon img {
-  width: 90%;
-  height: 90px;
-  object-fit: cover;
-  border-radius: 12px;
-}
+
+    .game-icon img {
+      width: 100%;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
     .game-card h3 {
       font-size: 21px;
       margin-bottom: 10px;
@@ -237,12 +239,11 @@
 
   <main class="container">
 
-    <!-- وێنەی سەرەوە -->
-    <img
-      src="banner.jpg"
+    <imgsrc="banner.jpg"
       alt="SarHaD Store"
       class="banner"
     >
+
     <section id="homeSection">
 
       <section class="hero">
@@ -266,38 +267,50 @@
 
         <!-- 8 Ball Pool -->
         <div class="game-card" data-name="8 Ball Pool">
+
           <div class="game-icon">
-  <img src="8ballpool.jpg" alt="8 Ball Pool">
-</div>
+            <img src="8ballpool.jpg" alt="8 Ball Pool">
+          </div>
+
           <h3>8 Ball Pool</h3>
           <p>کلیلی یاری و خزمەتگوزارییەکان</p>
+
           <button onclick="openProducts('pool')">
             بینینی بەرهەمەکان
           </button>
+
         </div>
 
         <!-- PUBG Mobile -->
         <div class="game-card" data-name="PUBG Mobile">
+
           <div class="game-icon">
-  <img src="pubg.jpg" alt="PUBG Mobile">
-</div>
+            <img src="pubg.jpg" alt="PUBG Mobile">
+          </div>
+
           <h3>PUBG Mobile</h3>
           <p>UC و خزمەتگوزارییەکان</p>
+
           <button onclick="openProducts('pubg')">
             بینینی بەرهەمەکان
           </button>
+
         </div>
 
         <!-- TikTok -->
         <div class="game-card" data-name="TikTok Accounts">
-         <div class="game-icon">
-  <img src="tiktok.jpg" alt="TikTok">
-</div>
+
+          <div class="game-icon">
+            <img src="tiktok.jpg" alt="TikTok">
+          </div>
+
           <h3>TikTok Accounts</h3>
           <p>ئەکاونتی TikTok بۆ فرۆشتن</p>
+
           <button onclick="openProducts('tiktok')">
             بینینی ئەکاونتەکان
           </button>
+
         </div>
 
       </div>
@@ -310,46 +323,31 @@
       <button class="back-button" onclick="goHome()">
         ← گەڕانەوە
       </button>
-<div class="products-grid">
 
-  <div class="product-card">
-    <h3>🎱 کڕینی ئەکاونتی 8 Ball Pool</h3>
-    <p>ئەکاونتی 8 Ball Pool بۆ کڕین</p>
-    <button onclick="buyProduct('8 Ball Pool Account')">
-      🛒 کڕین
-    </button>
-  </div>
-
-  <div class="product-card">
-    <h3>🛠️ خزمەتگوزاری 8 Ball Pool</h3>
-    <p>خزمەتگوزارییەکانی 8 Ball Pool</p>
-    <button onclick="buyProduct('8 Ball Pool Service')">
-      🛒 کڕین
-    </button>
-  </div>
-
-</div>
       <h2 class="section-title">🎱 8 Ball Pool</h2>
 
-     <div class="products-grid">
+      <div class="products-grid">
 
-  <div class="product-card">
-    <h3>🎱 کڕینی ئەکاونتی 8 Ball Pool</h3>
-    <p>ئەکاونتی 8 Ball Pool بۆ کڕین</p>
-    <button onclick="buyProduct('8 Ball Pool Account')">
-      🛒 کڕین
-    </button>
-  </div>
+        <div class="product-card">
+          <h3>🎱 کڕینی ئەکاونتی 8 Ball Pool</h3>
+          <p>ئەکاونتی 8 Ball Pool بۆ کڕین</p>
 
-  <div class="product-card">
-    <h3>🛠️ خزمەتگوزاری 8 Ball Pool</h3>
-    <p>خزمەتگوزارییەکانی 8 Ball Pool</p>
-    <button onclick="buyProduct('8 Ball Pool Service')">
-      🛒 کڕین
-    </button>
-  </div>
+          <button onclick="buyProduct('8 Ball Pool Account')">
+            🛒 کڕین
+          </button>
+        </div>
 
-</div> 
+        <div class="product-card">
+          <h3>🛠️ خزمەتگوزاری 8 Ball Pool</h3>
+          <p>خزمەتگوزارییەکانی 8 Ball Pool</p>
+
+          <button onclick="buyProduct('8 Ball Pool Service')">
+            🛒 کڕین
+          </button>
+        </div>
+
+      </div>
+
     </section>
 
     <!-- PUBG -->
@@ -367,24 +365,27 @@
           <h3>💰 UC Package</h3>
           <p>پەکەجی UC</p>
           <div class="price">$5</div>
+
           <button onclick="buyProduct('PUBG Mobile - UC Package')">
             🛒 کڕین
           </button>
         </div>
 
         <div class="product-card">
-          <h3>⭐ Premium</h3>
+          <h3>⭐️ Premium</h3>
           <p>خزمەتگوزاری Premium</p>
           <div class="price">$10</div>
+
           <button onclick="buyProduct('PUBG Mobile - Premium')">
             🛒 کڕین
           </button>
         </div>
 
         <div class="product-card">
-          <h3>⚡ VIP Service</h3>
+          <h3>⚡️ VIP Service</h3>
           <p>خزمەتگوزاری VIP</p>
           <div class="price">$15</div>
+
           <button onclick="buyProduct('PUBG Mobile - VIP Service')">
             🛒 کڕین
           </button>
@@ -409,6 +410,7 @@
           <h3>🎵 TikTok Account #1</h3>
           <p>ئەکاونتی TikTok ـی بەردەست</p>
           <div class="price">$10</div>
+
           <button onclick="buyProduct('TikTok Account #1')">
             🛒 کڕین
           </button>
@@ -418,6 +420,7 @@
           <h3>🎵 TikTok Account #2</h3>
           <p>ئەکاونتی TikTok ـی بەردەست</p>
           <div class="price">$20</div>
+
           <button onclick="buyProduct('TikTok Account #2')">
             🛒 کڕین
           </button>
@@ -427,6 +430,7 @@
           <h3>🎵 TikTok Account #3</h3>
           <p>ئەکاونتی TikTok ـی بەردەست</p>
           <div class="price">$30</div>
+
           <button onclick="buyProduct('TikTok Account #3')">
             🛒 کڕین
           </button>
