@@ -1,238 +1,191 @@
-<!DOCTYPE html>
-<html lang="ku" dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SarHaD Store</title>
-
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-    }
-
-    body {
-      background: #0f1115;
-      color: white;
-    }
-
-    header {
-      background: #171a21;
-      padding: 20px;
-      text-align: center;
-      border-bottom: 1px solid #292d36;
-    }
-
-    header h1 {
-      font-size: 30px;
-      margin-bottom: 8px;
-    }
-
-    header p {
-      color: #aaa;
-    }
-
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 25px;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 45px 20px;
-    }
-
-    .hero h2 {
-      font-size: 32px;
-      margin-bottom: 12px;
-    }
-
-    .hero p {
-      color: #aaa;
-      font-size: 17px;
-    }
-
-    .games {
-      padding: 30px 0;
-      text-align: center;
-    }
-
-    .games h2 {
-      font-size: 30px;
-      margin-bottom: 25px;
-    }
-
-    .games-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
-
-    .game-card {
-      background: #181b22;
-      border: 1px solid #292d36;
-      border-radius: 18px;
-      padding: 25px;
-      text-align: center;
-    }
-
-    .game-icon {
-      font-size: 55px;
-      margin-bottom: 15px;
-    }
-
-    .game-card h3 {
-      font-size: 21px;
-      margin-bottom: 10px;
-    }
-
-    .game-card p {
-      color: #aaa;
-      margin-bottom: 18px;
-    }
-
-    .game-card button {
-      width: 100%;
-      padding: 12px;
-      border: none;
-      border-radius: 10px;
-      background: white;
-      color: #111;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
-    }
-
-    .card {
-      background: #181b22;
-      border: 1px solid #292d36;
-      border-radius: 15px;
-      padding: 25px;
-      text-align: center;
-    }
-
-    .card h3 {
-      margin-bottom: 12px;
-      font-size: 21px;
-    }
-
-    .price {
-      font-size: 22px;
-      margin: 15px 0;
-    }
-
-    .buy {
-      width: 100%;
-      padding: 12px;
-      border: none;
-      border-radius: 9px;
-      background: white;
-      color: #111;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .buy:hover {
-      background: #ddd;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      color: #777;
-      margin-top: 40px;
-    }
-  </style>
-</head>
-
-<body>
-
-  <img src="banner.jpg" alt="SarHaD Store" style="width:100%; display:block;">
-
-  <header>
-    <h1>🛒 SarHaD Store</h1>
-    <p>فروشگای دیجیتاڵ</p>
-  </header>
-
-  <div class="container">
-
-    <section class="hero">
-      <h2>بەخێربێیت بۆ SarHaD Store</h2>
-      <p>بەرهەم و خزمەتگوزارییە دیجیتاڵەکانت لێرە بەردەستن</p>
-    </section>
-
-    <section class="games">
-
-      <h2>🎮 یارییەکان</h2>
-
-      <div class="games-grid">
-
-        <div class="game-card">
-          <div class="game-icon">🎱</div>
-          <h3>8 Ball Pool</h3>
-          <p>کلیلی یاری و خزمەتگوزارییەکان</p>
-          <button>بینینی بەرهەمەکان</button>
+<div class="product-card">
+          <h3>🎵 TikTok Account #1</h3>
+          <p>ئەکاونتی TikTok ـی بەردەست</p>
+          <div class="price">$10</div>
+          <button class="buy" onclick="buy('TikTok Account #1')">
+            🛒 کڕین
+          </button>
         </div>
 
-        <div class="game-card">
-          <div class="game-icon">🔫</div>
-          <h3>PUBG Mobile</h3>
-          <p>UC و خزمەتگوزارییەکان</p>
-          <button>بینینی بەرهەمەکان</button>
+        <div class="product-card">
+          <h3>🎵 TikTok Account #2</h3>
+          <p>ئەکاونتی TikTok ـی بەردەست</p>
+          <div class="price">$20</div>
+          <button class="buy" onclick="buy('TikTok Account #2')">
+            🛒 کڕین
+          </button>
         </div>
 
-<div class="game-card">
-  <div class="game-icon">🎵</div>
-  <h3>TikTok Accounts</h3>
-  <p>ئەکاونتی TikTok بۆ فرۆشتن</p>
-  <button>بینینی ئەکاونتەکان</button>
-</div>
-
+        <div class="product-card">
+          <h3>🎵 TikTok Account #3</h3>
+          <p>ئەکاونتی TikTok ـی بەردەست</p>
+          <div class="price">$30</div>
+          <button class="buy" onclick="buy('TikTok Account #3')">
+            🛒 کڕین
+          </button>
+        </div>
 
       </div>
 
     </section>
 
-    <section class="products">
+    <!-- ABOUT -->
 
-      <div class="card">
-        <h3>🎮 Game Key</h3>
-        <p>کلیلی یاری</p>
-        <div class="price">$5</div>
-        <button class="buy">کڕین</button>
-      </div>
+    <section id="about" class="products-section">
 
-      <div class="card">
-        <h3>🔑 Premium Key</h3>
-        <p>کلیلی Premium</p>
-        <div class="price">$10</div>
-        <button class="buy">کڕین</button>
-      </div>
+      <button class="back" onclick="goHome()">
+        ← گەڕانەوە
+      </button>
 
-      <div class="card">
-        <h3>⚡ VIP Service</h3>
-        <p>خزمەتگوزاری VIP</p>
-        <div class="price">$15</div>
-        <button class="buy">کڕین</button>
+      <h2 class="section-title">ℹ️ دەربارەی SarHaD Store</h2>
+
+      <div class="about-box">
+        <p>
+          بەخێربێن بۆ SarHaD Store.
+        </p>
+
+        <p>
+          ئێمە خزمەتگوزاری و بەرهەمە دیجیتاڵەکان پێشکەش دەکەین.
+        </p>
+
+        <p>
+          ئامانجمان ئەوەیە خزمەتگوزارییەکان بە شێوەیەکی خێرا و ئاسان پێشکەش بکەین.
+        </p>
       </div>
 
     </section>
 
-  </div>
+    <!-- CONTACT -->
+
+    <section id="contact" class="products-section">
+
+      <button class="back" onclick="goHome()">
+        ← گەڕانەوە
+      </button>
+
+      <h2 class="section-title">📞 پەیوەندی</h2>
+
+      <div class="contact-box">
+
+        <p>
+          بۆ کڕین یان پرسیار، پەیوەندیمان پێوە بکە.
+        </p>
+
+        <p>
+          📱 WhatsApp: زیاد بکە
+        </p>
+
+        <p>
+          📱 Telegram: زیاد بکە
+        </p>
+
+        <p>
+          🎵 TikTok: زیاد بکە
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
 
   <footer>
     © 2026 SarHaD Store
   </footer>
+
+  <script>
+
+    function hideAllSections() {
+      const sections = document.querySelectorAll('.products-section');
+
+      sections.forEach(function(section) {
+        section.classList.remove('active');
+      });
+
+      document.getElementById('store').style.display = 'block';
+    }
+
+    function showProducts(id) {
+
+      hideAllSections();
+
+      document.getElementById('store').style.display = 'none';
+
+      const selected = document.getElementById(id);
+
+      if (selected) {
+        selected.classList.add('active');
+
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      }
+    }
+
+    function showSection(id) {
+
+      hideAllSections();
+
+      document.getElementById('store').style.display = 'none';
+
+      const selected = document.getElementById(id);
+
+      if (selected) {
+        selected.classList.add('active');
+
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      }
+    }
+
+    function goHome() {
+
+      hideAllSections();
+
+      document.getElementById('store').style.display = 'block';
+
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+
+    function searchGames() {
+
+      const searchText =
+        document.getElementById('search').value.toLowerCase();
+
+      const games =
+        document.querySelectorAll('.game-card');
+
+      games.forEach(function(game) {
+
+        const name =
+          game.getAttribute('data-name').toLowerCase();
+
+        if (name.includes(searchText)) {
+          game.style.display = 'block';
+        } else {
+          game.style.display = 'none';
+        }
+
+      });
+    }
+
+    function buy(productName) {
+
+      alert(
+        'بۆ کڕینی ' +
+        productName +
+        ' تکایە پەیوەندی بە SarHaD Store بکە.'
+      );
+
+    }
+
+  </script>
 
 </body>
 </html>
