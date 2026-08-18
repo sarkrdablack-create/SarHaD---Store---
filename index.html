@@ -253,15 +253,23 @@
     <h1>🛒 SarHaD Store</h1>
     <p>فروشگای دیجیتاڵ</p>
 
-    <nav>
-      <button class="login-btn" onclick="showInfo('login')">
-        🔐 Log In
-      </button>
+   <nav>
 
-      <button class="signup-btn" onclick="showInfo('signup')">
-        📝 Sign Up
-      </button>
-    </nav>
+  <button
+    class="login-btn"
+    type="button"
+    onclick="showInfo('login'); return false;">
+    🔐 Log In
+  </button>
+
+  <button
+    class="signup-btn"
+    type="button"
+    onclick="showInfo('signup'); return false;">
+    📝 Sign Up
+  </button>
+
+</nav>
   </header>
 
   <main class="container">
