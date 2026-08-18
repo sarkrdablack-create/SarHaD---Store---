@@ -13,13 +13,9 @@
       font-family: Arial, sans-serif;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       background: #0f1115;
-      color: #ffffff;
+      color: #fff;
     }
 
     header {
@@ -49,18 +45,16 @@
 
     nav button {
       width: auto;
-      padding: 10px 16px;
+      padding: 7px 11px;
       background: #252a34;
       color: #fff;
       border: 1px solid #363c48;
+      border-radius: 10px;
+      font-size: 12px;
     }
 
-    nav .login-btn,
-    nav .signup-btn {
-      width: auto !important;
-      padding: 6px 10px !important;
-      font-size: 12px !important;
-      margin: 0;
+    .container {
+      padding: 14px;
     }
 
     .banner {
@@ -127,7 +121,6 @@
     }
 
     .game-icon {
-      font-size: 55px;
       margin-bottom: 15px;
     }
 
@@ -138,8 +131,8 @@
       border-radius: 12px;
     }
 
-    .game-card h3 {
-      font-size: 21px;
+    .game-card h3,
+    .product-card h3 {
       margin-bottom: 10px;
     }
 
@@ -155,15 +148,15 @@
       padding: 12px;
       border: none;
       border-radius: 10px;
-      background: #ffffff;
-      color: #111111;
+      background: #fff;
+      color: #111;
       font-size: 16px;
       font-weight: bold;
       cursor: pointer;
     }
 
     button:hover {
-      background: #dddddd;
+      background: #ddd;
     }
 
     .products-section {
@@ -175,21 +168,16 @@
       display: block;
     }
 
-    .product-card h3 {
-      font-size: 20px;
-      margin-bottom: 10px;
+    .back-button {
+      background: #252a34;
+      color: #fff;
+      margin-bottom: 20px;
     }
 
     .price {
       font-size: 23px;
       font-weight: bold;
       margin: 15px 0;
-    }
-
-    .back-button {
-      background: #252a34;
-      color: #ffffff;
-      margin-bottom: 20px;
     }
 
     .info-box {
@@ -203,8 +191,8 @@
       margin: 8px 0;
       border-radius: 10px;
       border: 1px solid #292d36;
-      background: #181b22;
-      color: white;
+      background: #101218;
+      color: #fff;
       font-size: 16px;
       outline: none;
     }
@@ -216,7 +204,7 @@
     .auth-message {
       margin-top: 15px;
       color: #aaa;
-      line-height: 1.7;
+      line-height: 1.8;
     }
 
     footer {
@@ -239,10 +227,6 @@
       .section-title {
         font-size: 24px;
       }
-
-      .container {
-        padding: 14px;
-      }
     }
   </style>
 </head>
@@ -250,26 +234,21 @@
 <body>
 
   <header id="top">
+
     <h1>🛒 SarHaD Store</h1>
     <p>فروشگای دیجیتاڵ</p>
 
-   <nav>
-
-  <button
-    class="login-btn"
-    type="button"
-    onclick="showInfo('login'); return false;">
-    🔐 Log In
-  </button>
-
-  <button
-    class="signup-btn"
-    type="button"
-    onclick="showInfo('signup'); return false;">
-    📝 Sign Up
-  </button>
+    <nav>
+      <button type="button" onclick="showInfo('login')">
+        🔐 Log In
+      </button
+        <button type="button" onclick="showInfo('signup')">
+        📝 Sign Up
+      </button>
+    </nav>
 
   </header>
+
 
   <main class="container">
 
@@ -279,67 +258,116 @@
       class="banner"
     >
 
+
+    <!-- HOME -->
     <section id="homeSection">
 
       <section class="hero">
         <h2>بەخێربێیت بۆ SarHaD Store</h2>
+
         <p>
           بەرهەم و خزمەتگوزارییە دیجیتاڵەکانت لێرە بەردەستن
         </p>
       </section>
 
-      <h2 class="section-title">🎮 یاری و ئەکاونتەکان</h2>
+
+      <h2 class="section-title">
+        🎮 یاری و ئەکاونتەکان
+      </h2>
+
 
       <input
         id="searchBox"
         class="search"
         type="text"
         placeholder="گەڕان بۆ یاری یان ئەکاونت..."
-        oninput="searchGames()"
       >
+
 
       <div class="games-grid">
 
-        <div class="game-card" data-name="8 Ball Pool">
+
+        <!-- 8 BALL POOL -->
+        <div
+          class="game-card"
+          data-name="8 Ball Pool"
+        >
 
           <div class="game-icon">
-            <img src="8ballpool.jpg" alt="8 Ball Pool">
+            <img
+              src="8ballpool.jpg"
+              alt="8 Ball Pool"
+            >
           </div>
 
           <h3>8 Ball Pool</h3>
-          <p>کلیلی یاری و خزمەتگوزارییەکان</p>
 
-          <button onclick="openProducts('pool')">
+          <p>
+            کلیلی یاری و خزمەتگوزارییەکان
+          </p>
+
+          <button
+            type="button"
+            onclick="openProducts('pool')"
+          >
             بینینی بەرهەمەکان
           </button>
 
         </div>
 
-        <div class="game-card" data-name="PUBG Mobile">
+
+        <!-- PUBG -->
+        <div
+          class="game-card"
+          data-name="PUBG Mobile"
+        >
 
           <div class="game-icon">
-            <img src="pubg.jpg" alt="PUBG Mobile">
+            <img
+              src="pubg.jpg"
+              alt="PUBG Mobile"
+            >
           </div>
 
           <h3>PUBG Mobile</h3>
-          <p>UC و خزمەتگوزارییەکان</p>
 
-          <button onclick="openProducts('pubg')">
+          <p>
+            UC و خزمەتگوزارییەکان
+          </p>
+
+          <button
+            type="button"
+            onclick="openProducts('pubg')"
+          >
             بینینی بەرهەمەکان
           </button>
 
         </div>
 
-        <div class="game-card" data-name="TikTok Accounts">
+
+        <!-- TIKTOK -->
+        <div
+          class="game-card"
+          data-name="TikTok Accounts"
+        >
 
           <div class="game-icon">
-            <img src="tiktok.jpg" alt="TikTok">
+            <img
+              src="tiktok.jpg"
+              alt="TikTok"
+            >
           </div>
 
           <h3>TikTok Accounts</h3>
-          <p>ئەکاونتی TikTok بۆ فرۆشتن</p>
 
-          <button onclick="openProducts('tiktok')">
+          <p>
+            ئەکاونتی TikTok بۆ فرۆشتن
+          </p>
+
+          <button
+            type="button"
+            onclick="openProducts('tiktok')"
+          >
             بینینی ئەکاونتەکان
           </button>
 
@@ -349,164 +377,293 @@
 
     </section>
 
-    <!-- 8 BALL POOL -->
-    <section id="pool" class="products-section">
 
-      <button class="back-button" onclick="goHome()">
+    <!-- 8 BALL POOL -->
+    <section
+      id="pool"
+      class="products-section"
+    >
+
+      <button
+        type="button"
+        class="back-button"
+        onclick="goHome()"
+      >
         ← گەڕانەوە
       </button>
 
-      <h2 class="section-title">🎱 8 Ball Pool</h2>
+      <h2 class="section-title">
+        🎱 8 Ball Pool
+      </h2>
 
       <div class="products-grid">
 
         <div class="product-card">
-          <h3>🎱 کڕینی ئەکاونتی 8 Ball Pool</h3>
-          <p>ئەکاونتی 8 Ball Pool بۆ کڕین</p>
 
-          <button onclick="buyProduct('8 Ball Pool Account')">
+          <h3>
+            🎱 کڕینی ئەکاونتی 8 Ball Pool
+          </h3>
+
+          <p>
+            ئەکاونتی 8 Ball Pool بۆ کڕین
+          </p>
+
+          <button
+            type="button"
+            onclick="buyProduct('8 Ball Pool Account')"
+          >
             🛒 کڕین
           </button>
+
         </div>
 
-        <div class="product-card">
-          <h3>🛠 خزمەتگوزاری 8 Ball Pool</h3>
-          <p>خزمەتگوزارییەکانی 8 Ball Pool</p>
 
-          <button onclick="buyProduct('8 Ball Pool Service')">
+        <div class="product-card">
+
+          <h3>
+            🛠 خزمەتگوزاری 8 Ball Pool
+          </h3>
+
+          <p>
+            خزمەتگوزارییەکانی 8 Ball Pool
+          </p>
+
+          <button
+            type="button"
+            onclick="buyProduct('8 Ball Pool Service')"
+          >
             🛒 کڕین
           </button>
+
         </div>
 
       </div>
 
     </section>
+
 
     <!-- PUBG -->
-    <section id="pubg" class="products-section">
+    <section
+      id="pubg"
+      class="products-section"
+    >
 
-      <button class="back-button" onclick="goHome()">
+      <button
+        type="button"
+        class="back-button"
+        onclick="goHome()"
+      >
         ← گەڕانەوە
       </button>
 
-      <h2 class="section-title">🔫 PUBG Mobile</h2>
+      <h2 class="section-title">
+        🔫 PUBG Mobile
+      </h2>
 
       <div class="products-grid">
 
         <div class="product-card">
+
           <h3>💰 UC Package</h3>
+
           <p>پەکەجی UC</p>
+
           <div class="price">$5</div>
 
-          <button onclick="buyProduct('PUBG Mobile - UC Package')">
+          <button
+            type="button"
+            onclick="buyProduct('PUBG Mobile - UC Package')"
+          >
             🛒 کڕین
           </button>
+
         </div>
 
+
         <div class="product-card">
-          <h3>⭐️ Premium</h3>
+
+          <h3>⭐ Premium</h3>
           <p>خزمەتگوزاری Premium</p>
+
           <div class="price">$10</div>
 
-          <button onclick="buyProduct('PUBG Mobile - Premium')">
+          <button
+            type="button"
+            onclick="buyProduct('PUBG Mobile - Premium')"
+          >
             🛒 کڕین
           </button>
+
         </div>
 
+
         <div class="product-card">
-          <h3>⚡️ VIP Service</h3>
+
+          <h3>⚡ VIP Service</h3>
+
           <p>خزمەتگوزاری VIP</p>
+
           <div class="price">$15</div>
 
-          <button onclick="buyProduct('PUBG Mobile - VIP Service')">
+          <button
+            type="button"
+            onclick="buyProduct('PUBG Mobile - VIP Service')"
+          >
             🛒 کڕین
           </button>
+
         </div>
 
       </div>
 
     </section>
+
 
     <!-- TIKTOK -->
-    <section id="tiktok" class="products-section">
+    <section
+      id="tiktok"
+      class="products-section"
+    >
 
-      <button class="back-button" onclick="goHome()">
-        ← گەڕانەوە
-        </button>
-
-      <h2 class="section-title">🎵 TikTok Accounts</h2>
-
-      <div class="products-grid">
-
-        <div class="product-card">
-          <h3>🎵 TikTok Account #1</h3>
-          <p>ئەکاونتی TikTok ـی بەردەست</p>
-          <div class="price">$10</div>
-
-          <button onclick="buyProduct('TikTok Account #1')">
-            🛒 کڕین
-          </button>
-        </div>
-
-        <div class="product-card">
-          <h3>🎵 TikTok Account #2</h3>
-          <p>ئەکاونتی TikTok ـی بەردەست</p>
-          <div class="price">$20</div>
-
-          <button onclick="buyProduct('TikTok Account #2')">
-            🛒 کڕین
-          </button>
-        </div>
-
-        <div class="product-card">
-          <h3>🎵 TikTok Account #3</h3>
-          <p>ئەکاونتی TikTok ـی بەردەست</p>
-          <div class="price">$30</div>
-
-          <button onclick="buyProduct('TikTok Account #3')">
-            🛒 کڕین
-          </button>
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- POSTS -->
-    <section id="posts" class="products-section">
-
-      <button class="back-button" onclick="goHome()">
+      <button
+        type="button"
+        class="back-button"
+        onclick="goHome()"
+      >
         ← گەڕانەوە
       </button>
 
-      <h2 class="section-title">📢 پۆستەکان</h2>
+      <h2 class="section-title">
+        🎵 TikTok Accounts
+      </h2>
 
       <div class="products-grid">
 
         <div class="product-card">
-          <h3>🎱 پۆستی 8 Ball Pool</h3>
+
+          <h3>🎵 TikTok Account #1</h3>
+
+          <p>
+            ئەکاونتی TikTok ـی بەردەست
+          </p>
+
+          <div class="price">$10</div>
+
+          <button
+            type="button"
+            onclick="buyProduct('TikTok Account #1')"
+          >
+            🛒 کڕین
+          </button>
+
+        </div>
+
+
+        <div class="product-card">
+
+          <h3>🎵 TikTok Account #2</h3>
+
+          <p>
+            ئەکاونتی TikTok ـی بەردەست
+          </p>
+
+          <div class="price">$20</div>
+
+          <button
+            type="button"
+            onclick="buyProduct('TikTok Account #2')"
+          >
+            🛒 کڕین
+          </button>
+
+        </div>
+
+
+        <div class="product-card">
+
+          <h3>🎵 TikTok Account #3</h3>
+
+          <p>
+            ئەکاونتی TikTok ـی بەردەست
+          </p>
+
+          <div class="price">$30</div>
+
+          <button
+            type="button"
+            onclick="buyProduct('TikTok Account #3')"
+          >
+            🛒 کڕین
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- POSTS -->
+    <section
+      id="posts"
+      class="products-section"
+    >
+
+      <button
+        type="button"
+        class="back-button"
+        onclick="goHome()"
+      >
+        ← گەڕانەوە
+      </button>
+
+      <h2 class="section-title">
+        📢 پۆستەکان
+      </h2>
+
+      <div class="products-grid">
+
+        <div class="product-card">
+
+          <h3>
+            🎱 پۆستی 8 Ball Pool
+          </h3>
 
           <p>
             نوێترین ئەکاونتەکانی 8 Ball Pool لێرە ببینە.
           </p>
 
-          <button onclick="buyProduct('8 Ball Pool Post')">
+          <button
+            type="button"
+            onclick="buyProduct('8 Ball Pool Post')"
+          >
             🛒 کڕین
           </button>
+
         </div>
 
       </div>
 
     </section>
 
-    <!-- ABOUT -->
-    <section id="about" class="products-section">
 
-      <button class="back-button" onclick="goHome()">
+    <!-- ABOUT -->
+    <section
+      id="about"
+      class="products-section"
+    >
+
+      <button
+        type="button"
+        class="back-button"
+        onclick="goHome()"
+      >
         ← گەڕانەوە
       </button>
 
-      <h2 class="section-title">ℹ️ دەربارەی SarHaD Store</h2>
+      <h2 class="section-title">
+        ℹ️ دەربارەی SarHaD Store
+      </h2>
 
       <div class="info-box">
 
@@ -522,14 +679,24 @@
 
     </section>
 
-    <!-- LOGIN -->
-    <section id="login" class="products-section">
 
-      <button class="back-button" onclick="goHome()">
+    <!-- LOGIN -->
+    <section
+      id="login"
+      class="products-section"
+    >
+
+      <button
+        type="button"
+        class="back-button"
+        onclick="goHome()"
+      >
         ← گەڕانەوە
       </button>
 
-      <h2 class="section-title">🔐 Log In</h2>
+      <h2 class="section-title">
+        🔐 Log In
+      </h2>
 
       <div class="info-box">
 
@@ -547,24 +714,40 @@
           placeholder="🔑 پاسوۆرد"
         >
 
-        <button class="auth-button" onclick="loginUser()">
+        <button
+          type="button"
+          class="auth-button"
+          onclick="loginUser()"
+        >
           🔐 Log In
         </button>
 
-        <p id="loginMessage" class="auth-message"></p>
+        <p
+          id="loginMessage"
+          class="auth-message"
+        ></p>
 
       </div>
+      [2026/08/18 04:49 د.ن] سرهد ١: </section>
 
-    </section>
 
     <!-- SIGN UP -->
-    <section id="signup" class="products-section">
+    <section
+      id="signup"
+      class="products-section"
+    >
 
-      <button class="back-button" onclick="goHome()">
+      <button
+        type="button"
+        class="back-button"
+        onclick="goHome()"
+      >
         ← گەڕانەوە
       </button>
 
-      <h2 class="section-title">📝 Sign Up</h2>
+      <h2 class="section-title">
+        📝 Sign Up
+      </h2>
 
       <div class="info-box">
 
@@ -589,146 +772,455 @@
           placeholder="🔑 پاسوۆرد"
         >
 
-        <button class="auth-button" onclick="signupUser()">
+        <button
+          type="button"
+          class="auth-button"
+          onclick="signupUser()"
+        >
           📝 Sign Up
         </button>
 
-        <p id="signupMessage" class="auth-message"></p>
+        <p
+          id="signupMessage"
+          class="auth-message"
+        ></p>
 
       </div>
 
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="products-section">
 
-      <button class="back-button" onclick="goHome()">
+    <!-- CONTACT -->
+    <section
+      id="contact"
+      class="products-section"
+    >
+
+      <button
+        type="button"
+        class="back-button"
+        onclick="goHome()"
+      >
         ← گەڕانەوە
       </button>
 
-      <h2 class="section-title">📞 پەیوەندی</h2>
+      <h2 class="section-title">
+        📞 پەیوەندی
+      </h2>
 
       <div class="info-box">
-        <p>بۆ کڕین و پرسیار پەیوەندیمان پێوە بکە.</p>
-        <p>📱 WhatsApp: لێرە ژمارەکەت زیاد دەکەین</p>
-        <p>📱 Telegram: لێرە لینکی Telegram ـت زیاد دەکەین</p>
-        <p>🎵 TikTok: لێرە لینکی TikTok ـت زیاد دەکەین</p>
+
+        <p>
+          بۆ کڕین و پرسیار پەیوەندیمان پێوە بکە.
+        </p>
+
+        <p>
+          📱 WhatsApp: لێرە ژمارەکەت زیاد دەکەین
+        </p>
+
+        <p>
+          📱 Telegram: لێرە لینکی Telegram ـت زیاد دەکەین
+        </p>
+
+        <p>
+          🎵 TikTok: لێرە لینکی TikTok ـت زیاد دەکەین
+        </p>
+
       </div>
 
     </section>
 
   </main>
 
+
   <footer>
     © 2026 SarHaD Store
   </footer>
-  <!-- Supabase -->
+
+
+  <!-- SUPABASE LIBRARY -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-<script>
 
-function hideAllProducts() {
-  document.querySelectorAll(".products-section").forEach(function(section) {
-    section.classList.remove("active");
-    section.style.display = "none";
-  });
-}
+  <script>
 
-function goHome() {
-  hideAllProducts();
+    /* =========================
+       SUPABASE
+    ========================= */
 
-  const home = document.getElementById("homeSection");
+    const SUPABASE_URL =
+      "https://tsfuietzygzhdavnrztt.supabase.co";
 
-  if (home) {
-    home.style.display = "block";
-  }
+    const SUPABASE_PUBLISHABLE_KEY =
+      "sb_publishable_wSBO88rAOp3coWDpW3_kEw_PSgkVzgX";
 
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
-}
+    const supabaseClient =
+      window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_PUBLISHABLE_KEY
+      );
 
-function openProducts(id) {
-  const home = document.getElementById("homeSection");
 
-  if (home) {
-    home.style.display = "none";
-  }
+    /* =========================
+       PAGE NAVIGATION
+    ========================= */
 
-  hideAllProducts();
+    function hideAllProducts() {
 
-  const section = document.getElementById(id);
+      const sections =
+        document.querySelectorAll(".products-section");
 
-  if (section) {
-    section.classList.add("active");
-    section.style.display = "block";
-  }
+      sections.forEach(function(section) {
 
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
-}
+        section.classList.remove("active");
+        section.style.display = "none";
 
-function showInfo(id) {
-  const home = document.getElementById("homeSection");
+      });
 
-  if (home) {
-    home.style.display = "none";
-  }
-
-  hideAllProducts();
-
-  const section = document.getElementById(id);
-
-  if (section) {
-    section.classList.add("active");
-    section.style.display = "block";
-  }
-
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
-}
-
-function searchGames() {
-
-  const searchBox = document.getElementById("searchBox");
-
-  if (!searchBox) return;
-
-  const text = searchBox.value.toLowerCase().trim();
-
-  const cards = document.querySelectorAll(".game-card");
-
-  cards.forEach(function(card) {
-
-    const name = (
-      card.getAttribute("data-name") || ""
-    ).toLowerCase();
-
-    if (name.includes(text)) {
-      card.style.display = "";
-    } else {
-      card.style.display = "none";
     }
 
-  });
-}
 
-function buyProduct(productName) {
+    function goHome() {
 
-  alert(
-    "بۆ کڕینی " +
-    productName +
-    " تکایە پەیوەندی بە SarHaD Store بکە."
-  );
+      hideAllProducts();
 
-}
+      const home =
+        document.getElementById("homeSection");
 
-</script>
+      if (home) {
+        home.style.display = "block";
+      }
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+
+    }
+
+
+    function openProducts(id) {
+
+      const home =
+        document.getElementById("homeSection");
+
+      if (home) {
+        home.style.display = "none";
+      }
+
+      hideAllProducts();
+
+      const section =
+        document.getElementById(id);
+
+      if (section) {
+
+        section.classList.add("active");
+        section.style.display = "block";
+
+      }
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+
+    }
+
+
+    function showInfo(id) {
+
+      const home =
+        document.getElementById("homeSection");
+
+      if (home) {
+        home.style.display = "none";
+      }
+
+      hideAllProducts();
+
+      const section =
+        document.getElementById(id);
+
+      if (section) {
+
+        section.classList.add("active");
+        section.style.display = "block";
+
+      }
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+
+    }
+
+
+    /* =========================
+       SEARCH
+    ========================= */
+
+    const searchBox =
+      document.getElementById("searchBox");
+
+    if (searchBox) {
+
+      searchBox.addEventListener(
+        "input",
+        function() {
+
+          const text =
+            this.value
+              .
+[2026/08/18 04:49 د.ن] سرهد ١: toLowerCase()
+              .trim();
+
+          const cards =
+            document.querySelectorAll(".game-card");
+
+          cards.forEach(function(card) {
+
+            const name =
+              (
+                card.getAttribute("data-name") || ""
+              ).toLowerCase();
+
+            if (name.includes(text)) {
+
+              card.style.display = "";
+
+            } else {
+
+              card.style.display = "none";
+
+            }
+
+          });
+
+        }
+      );
+
+    }
+
+
+    /* =========================
+       SIGN UP
+    ========================= */
+
+    async function signupUser() {
+
+      const username =
+        document
+          .getElementById("signupUsername")
+          .value
+          .trim();
+
+      const email =
+        document
+          .getElementById("signupEmail")
+          .value
+          .trim();
+
+      const password =
+        document
+          .getElementById("signupPassword")
+          .value;
+
+      const message =
+        document.getElementById("signupMessage");
+
+
+      if (!username) {
+
+        message.textContent =
+          "⚠️ تکایە ناوی بەکارهێنەر بنووسە.";
+
+        return;
+
+      }
+
+
+      if (!email) {
+
+        message.textContent =
+          "⚠️ تکایە ئیمەیڵ بنووسە.";
+
+        return;
+
+      }
+
+
+      if (!password) {
+
+        message.textContent =
+          "⚠️ تکایە پاسوۆرد بنووسە.";
+
+        return;
+
+      }
+
+
+      if (password.length < 6) {
+
+        message.textContent =
+          "⚠️ پاسوۆرد دەبێت لانیکەم 6 پیت بێت.";
+
+        return;
+
+      }
+
+
+      message.textContent =
+        "⏳ چاوەڕێ بکە...";
+
+
+      try {
+
+        const result =
+          await supabaseClient.auth.signUp({
+
+            email: email,
+
+            password: password,
+
+            options: {
+
+              data: {
+                username: username
+              }
+
+            }
+
+          });
+
+
+        if (result.error) {
+
+          message.textContent =
+            "❌ " + result.error.message;
+
+          return;
+
+        }
+
+
+        message.textContent =
+          "✅ هەژمارەکەت دروست کرا.";
+
+      }
+
+      catch (error) {
+
+        message.textContent =
+          "❌ هەڵەیەک ڕوویدا.";
+
+        console.error(error);
+
+      }
+
+    }
+
+
+    /* =========================
+       LOG IN
+    ========================= */
+
+    async function loginUser() {
+
+      const email =
+        document
+          .getElementById("loginEmail")
+          .value
+          .trim();
+
+      const password =
+        document
+          .getElementById("loginPassword")
+          .value;
+
+      const message =
+        document.getElementById("loginMessage");
+
+
+      if (!email) {
+
+        message.textContent =
+          "⚠️ تکایە ئیمەیڵ بنووسە.";
+
+        return;
+
+      }
+
+
+      if (!password) {
+
+        message.textContent =
+          "⚠️ تکایە پاسوۆرد بنووسە.";
+
+        return;
+
+      }
+
+
+      message.textContent =
+        "⏳ چاوەڕێ بکە...";
+
+
+      try {
+
+        const result =
+          await supabaseClient.auth.signInWithPassword({
+
+            email: email,
+
+            password: password
+
+          });
+
+
+        if (result.error) {
+
+          message.textContent =
+            "❌ " + result.error.message;
+
+          return;
+
+        }
+
+
+        message.textContent =
+          "✅ بە سەرکەوتوویی چوویتە ژوورەوە.";
+
+      }
+
+      catch (error) {
+
+        message.textContent =
+          "❌ هەڵەیەک ڕوویدا.";
+
+        console.error(error);
+
+      }
+
+    }
+
+
+    /* =========================
+       BUY
+    ========================= */
+
+    function buyProduct(productName) {
+
+      alert(
+        "بۆ کڕینی " +
+        productName +
+        " تکایە پەیوەندی بە SarHaD Store بکە."
+      );
+
+    }
+
+  </script>
 
 </body>
 </html>
