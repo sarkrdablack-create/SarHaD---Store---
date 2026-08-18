@@ -54,12 +54,13 @@
       color: #fff;
       border: 1px solid #363c48;
     }
-nav button:nth-last-child(1),
-nav button:nth-last-child(2) {
-  width: auto !important;
-  padding: 4px 7px !important;
-  font-size: 10px !important;
-  
+
+    nav .login-btn,
+    nav .signup-btn {
+      width: auto !important;
+      padding: 6px 10px !important;
+      font-size: 12px !important;
+      margin: 0;
     }
 
     .banner {
@@ -196,6 +197,28 @@ nav button:nth-last-child(2) {
       line-height: 2;
     }
 
+    .auth-input {
+      width: 100%;
+      padding: 14px;
+      margin: 8px 0;
+      border-radius: 10px;
+      border: 1px solid #292d36;
+      background: #181b22;
+      color: white;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .auth-button {
+      margin-top: 12px;
+    }
+
+    .auth-message {
+      margin-top: 15px;
+      color: #aaa;
+      line-height: 1.7;
+    }
+
     footer {
       text-align: center;
       color: #777;
@@ -221,14 +244,6 @@ nav button:nth-last-child(2) {
         padding: 14px;
       }
     }
-    nav .login-btn,
-nav .signup-btn {
-  width: auto !important;
-  padding: 6px 10px !important;
-  font-size: 12px !important;
-  margin: 0;
-}
-    
   </style>
 </head>
 
@@ -239,14 +254,20 @@ nav .signup-btn {
     <p>فروشگای دیجیتاڵ</p>
 
     <nav>
-  
-    <button onclick="showInfo('login')">🔐 Log In</button>
-<button onclick="showInfo('signup')">📝 Sign Up</button>
+      <button class="login-btn" onclick="showInfo('login')">
+        🔐 Log In
+      </button>
+
+      <button class="signup-btn" onclick="showInfo('signup')">
+        📝 Sign Up
+      </button>
+    </nav>
   </header>
 
   <main class="container">
 
-    <imgsrc="banner.jpg"
+    <img
+      src="banner.jpg"
       alt="SarHaD Store"
       class="banner"
     >
@@ -272,7 +293,6 @@ nav .signup-btn {
 
       <div class="games-grid">
 
-        <!-- 8 Ball Pool -->
         <div class="game-card" data-name="8 Ball Pool">
 
           <div class="game-icon">
@@ -288,7 +308,6 @@ nav .signup-btn {
 
         </div>
 
-        <!-- PUBG Mobile -->
         <div class="game-card" data-name="PUBG Mobile">
 
           <div class="game-icon">
@@ -304,7 +323,6 @@ nav .signup-btn {
 
         </div>
 
-        <!-- TikTok -->
         <div class="game-card" data-name="TikTok Accounts">
 
           <div class="game-icon">
@@ -324,36 +342,36 @@ nav .signup-btn {
 
     </section>
 
-  <!-- 8 BALL POOL -->
-<section id="pool" class="products-section">
+    <!-- 8 BALL POOL -->
+    <section id="pool" class="products-section">
 
-  <button class="back-button" onclick="goHome()">
-    ← گەڕانەوە
-  </button>
-
-  <h2 class="section-title">🎱 8 Ball Pool</h2>
-
-  <div class="products-grid">
-
-    <div class="product-card">
-      <h3>🎱 کڕینی ئەکاونتی 8 Ball Pool</h3>
-      <p>ئەکاونتی 8 Ball Pool بۆ کڕین</p>
-
-      <button onclick="buyProduct('8 Ball Pool Account')">
-        🛒 کڕین
+      <button class="back-button" onclick="goHome()">
+        ← گەڕانەوە
       </button>
-    </div>
 
-    <div class="product-card">
-      <h3>🛠️ خزمەتگوزاری 8 Ball Pool</h3>
-      <p>خزمەتگوزارییەکانی 8 Ball Pool</p>
+      <h2 class="section-title">🎱 8 Ball Pool</h2>
 
-      <button onclick="buyProduct('8 Ball Pool Service')">
-        🛒 کڕین
-      </button>
-    </div>
+      <div class="products-grid">
 
-  </div>
+        <div class="product-card">
+          <h3>🎱 کڕینی ئەکاونتی 8 Ball Pool</h3>
+          <p>ئەکاونتی 8 Ball Pool بۆ کڕین</p>
+
+          <button onclick="buyProduct('8 Ball Pool Account')">
+            🛒 کڕین
+          </button>
+        </div>
+
+        <div class="product-card">
+          <h3>🛠 خزمەتگوزاری 8 Ball Pool</h3>
+          <p>خزمەتگوزارییەکانی 8 Ball Pool</p>
+
+          <button onclick="buyProduct('8 Ball Pool Service')">
+            🛒 کڕین
+          </button>
+        </div>
+
+      </div>
 
     </section>
 
@@ -407,7 +425,7 @@ nav .signup-btn {
 
       <button class="back-button" onclick="goHome()">
         ← گەڕانەوە
-      </button>
+        </button>
 
       <h2 class="section-title">🎵 TikTok Accounts</h2>
 
@@ -421,7 +439,7 @@ nav .signup-btn {
           <button onclick="buyProduct('TikTok Account #1')">
             🛒 کڕین
           </button>
-          </div>
+        </div>
 
         <div class="product-card">
           <h3>🎵 TikTok Account #2</h3>
@@ -446,32 +464,34 @@ nav .signup-btn {
       </div>
 
     </section>
-<!-- POSTS -->
-<section id="posts" class="products-section">
 
-  <button class="back-button" onclick="goHome()">
-    ← گەڕانەوە
-  </button>
+    <!-- POSTS -->
+    <section id="posts" class="products-section">
 
-  <h2 class="section-title">📢 پۆستەکان</h2>
-
-  <div class="products-grid">
-
-    <div class="product-card">
-      <h3>🎱 پۆستی 8 Ball Pool</h3>
-
-      <p>
-        نوێترین ئەکاونتەکانی 8 Ball Pool لێرە ببینە.
-      </p>
-
-      <button onclick="buyProduct('8 Ball Pool Post')">
-        🛒 کڕین
+      <button class="back-button" onclick="goHome()">
+        ← گەڕانەوە
       </button>
-    </div>
 
-  </div>
+      <h2 class="section-title">📢 پۆستەکان</h2>
 
-</section>
+      <div class="products-grid">
+
+        <div class="product-card">
+          <h3>🎱 پۆستی 8 Ball Pool</h3>
+
+          <p>
+            نوێترین ئەکاونتەکانی 8 Ball Pool لێرە ببینە.
+          </p>
+
+          <button onclick="buyProduct('8 Ball Pool Post')">
+            🛒 کڕین
+          </button>
+        </div>
+
+      </div>
+
+    </section>
+
     <!-- ABOUT -->
     <section id="about" class="products-section">
 
@@ -482,6 +502,7 @@ nav .signup-btn {
       <h2 class="section-title">ℹ️ دەربارەی SarHaD Store</h2>
 
       <div class="info-box">
+
         <p>
           بەخێربێن بۆ SarHaD Store.
         </p>
@@ -489,76 +510,88 @@ nav .signup-btn {
         <p>
           ئێمە بەرهەم و خزمەتگوزارییە دیجیتاڵەکان پێشکەش دەکەین.
         </p>
+
       </div>
 
     </section>
-<!-- LOGIN -->
-<section id="login" class="products-section">
 
-  <button class="back-button" onclick="goHome()">
-    ← گەڕانەوە
-  </button>
+    <!-- LOGIN -->
+    <section id="login" class="products-section">
 
-  <h2 class="section-title">🔐 Log In</h2>
+      <button class="back-button" onclick="goHome()">
+        ← گەڕانەوە
+      </button>
 
-  <div class="info-box">
+      <h2 class="section-title">🔐 Log In</h2>
 
-    <input
-      type="email"
-      placeholder="📧 ئیمەیڵ"
-      style="width:100%; padding:14px; margin:8px 0; border-radius:10px; border:1px solid #292d36; background:#181b22; color:white;"
-    >
+      <div class="info-box">
 
-    <input
-      type="password"
-      placeholder="🔑 پاسوۆرد"
-      style="width:100%; padding:14px; margin:8px 0; border-radius:10px; border:1px solid #292d36; background:#181b22; color:white;"
-    >
+        <input
+          id="loginEmail"
+          class="auth-input"
+          type="email"
+          placeholder="📧 ئیمەیڵ"
+        >
 
-    <button style="margin-top:12px;">
-      🔐 Log In
-    </button>
+        <input
+          id="loginPassword"
+          class="auth-input"
+          type="password"
+          placeholder="🔑 پاسوۆرد"
+        >
 
-  </div>
+        <button class="auth-button" onclick="loginUser()">
+          🔐 Log In
+        </button>
 
-</section>
+        <p id="loginMessage" class="auth-message"></p>
 
-<!-- SIGN UP -->
-<section id="signup" class="products-section">
+      </div>
 
-  <button class="back-button" onclick="goHome()">
-    ← گەڕانەوە
-  </button>
+    </section>
 
-  <h2 class="section-title">📝 Sign Up</h2>
+    <!-- SIGN UP -->
+    <section id="signup" class="products-section">
 
-  <div class="info-box">
+      <button class="back-button" onclick="goHome()">
+        ← گەڕانەوە
+      </button>
 
-    <input
-      type="text"
-      placeholder="👤 ناوی بەکارهێنەر"
-      style="width:100%; padding:14px; margin:8px 0; border-radius:10px; border:1px solid #292d36; background:#181b22; color:white;"
-    >
+      <h2 class="section-title">📝 Sign Up</h2>
 
-    <input
-      type="email"
-      placeholder="📧 ئیمەیڵ"
-      style="width:100%; padding:14px; margin:8px 0; border-radius:10px; border:1px solid #292d36; background:#181b22; color:white;"
-    >
+      <div class="info-box">
 
-    <input
-      type="password"
-      placeholder="🔑 پاسوۆرد"
-      style="width:100%; padding:14px; margin:8px 0; border-radius:10px; border:1px solid #292d36; background:#181b22; color:white;"
-    >
+        <input
+          id="signupUsername"
+          class="auth-input"
+          type="text"
+          placeholder="👤 ناوی بەکارهێنەر"
+        >
 
-    <button style="margin-top:12px;">
-      📝 Sign Up
-    </button>
+        <input
+          id="signupEmail"
+          class="auth-input"
+          type="email"
+          placeholder="📧 ئیمەیڵ"
+        >
 
-  </div>
+        <input
+          id="signupPassword"
+          class="auth-input"
+          type="password"
+          placeholder="🔑 پاسوۆرد"
+        >
 
-</section>
+        <button class="auth-button" onclick="signupUser()">
+          📝 Sign Up
+        </button>
+
+        <p id="signupMessage" class="auth-message"></p>
+
+      </div>
+
+    </section>
+
     <!-- CONTACT -->
     <section id="contact" class="products-section">
 
@@ -582,11 +615,26 @@ nav .signup-btn {
   <footer>
     © 2026 SarHaD Store
   </footer>
+  <!-- Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
   <script>
 
+    const SUPABASE_URL =
+      "https://tsfuietzygzhdavnrztt.supabase.co";
+
+    const SUPABASE_PUBLISHABLE_KEY =
+      "sb_publishable_wSBO88rAOp3coWDpW3_kEw_PSgkVzgX";
+
+    const supabaseClient =
+      window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_PUBLISHABLE_KEY
+      );
+
     function hideAllProducts() {
-      const sections = document.querySelectorAll(".products-section");
+      const sections =
+        document.querySelectorAll(".products-section");
 
       sections.forEach(function(section) {
         section.classList.remove("active");
@@ -639,27 +687,143 @@ nav .signup-btn {
     }
 
     function searchGames() {
-      const text = document
-        .getElementById("searchBox")
-        .value
-        .toLowerCase();
 
-      const cards = document.querySelectorAll(".game-card");
+      const text =
+        document
+          .getElementById("searchBox")
+          .value
+          .toLowerCase();
+
+      const cards =
+        document.querySelectorAll(".game-card");
 
       cards.forEach(function(card) {
-        const name = card
-          .getAttribute("data-name")
-          .toLowerCase();
+
+        const name =
+          card
+            .getAttribute("data-name")
+            .toLowerCase();
 
         if (name.includes(text)) {
           card.style.display = "block";
         } else {
           card.style.display = "none";
         }
+
       });
     }
 
+    async function signupUser() {
+
+      const username =
+        document
+          .getElementById("signupUsername")
+          .value
+          .trim();
+
+      const email =
+        document
+          .getElementById("signupEmail")
+          .value
+          .trim();
+
+      const password =
+        document
+          .getElementById("signupPassword")
+          .value;
+
+      const message =
+        document.getElementById("signupMessage");
+
+      message.textContent = "";
+
+      if (!username  !email  !password) {
+        message.textContent =
+          "⚠️ تکایە هەموو خانەکان پڕ بکەرەوە.";
+        return;
+      }
+
+      if (password.length < 6) {
+        message.textContent =
+          "⚠️ پاسوۆرد دەبێت لانیکەم 6 پیت بێت.";
+        return;
+      }
+
+      message.textContent =
+        "⏳ هەژمارەکە دروست دەکرێت...";
+
+      const { data, error } =
+        await supabaseClient.auth.signUp({
+          email: email,
+          password: password,
+          options: {
+            data: {
+              username: username
+            }
+          }
+        });
+
+      if (error) {
+        message.textContent =
+          "❌ هەڵە: " + error.message;
+        return;
+      }
+
+      if (data.user) {
+        message.textContent =
+          "✅ هەژمارەکەت دروست کرا. ئەگەر داوای پشتڕاستکردنەوەی ئیمەیڵ کرا، ئیمەیڵەکەت بپشکنە.";
+      }
+    }
+
+    async function loginUser() {
+
+      const email =
+        document
+          .getElementById("loginEmail")
+          .value
+          .trim();
+
+      const password =
+        document
+          .getElementById("loginPassword")
+          .value;
+
+      const message =
+        document.getElementById("loginMessage");
+
+      message.textContent = "";
+
+      if (!email || !password) {
+        message.textContent =
+          "⚠️ تکایە ئیمەیڵ و پاسوۆرد بنووسە.";
+        return;
+      }
+
+      message.textContent =
+        "⏳ چاوەڕێ بکە...";
+
+      const { data, error } =
+        await supabaseClient.auth.signInWithPassword({
+          email: email,
+          password: password
+        });
+
+      if (error) {
+        message.textContent =
+          "❌ هەڵە: " + error.message;
+        return;
+      }
+
+      message.textContent =
+        "✅ بە سەرکەوتوویی چوویتە ژوورەوە.";
+
+      setTimeout(function() {
+        goHome();
+      }, 1000);
+    }
+
     function buyProduct(productName) {
+
       alert(
         "بۆ کڕینی " +
         productName +
